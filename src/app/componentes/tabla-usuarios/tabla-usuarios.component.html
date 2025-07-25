@@ -1,22 +1,69 @@
-<div style="width: 90%; margin: 30px auto;">
-    <table style="width: 100%; border-collapse: collapse;">
-        <thead>
-            <tr style="background: #f3f3f3;">
-                <th style="padding: 8px; border: 1px solid #ccc;">Nombre</th>
-                <th style="padding: 8px; border: 1px solid #ccc;">Producto</th>
-                <th style="padding: 8px; border: 1px solid #ccc;">precio</th>
-                <th style="padding: 8px; border: 1px solid #ccc;">Imagen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let usuario of usuarios">
-                <td style="padding: 8px; border: 1px solid #ccc;">{{ usuario.nombre }}</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">{{ usuario.profesion }}</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">{{ usuario.precio }}</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">
-                    <img [src]="usuario.imagenUrl" alt="Foto" width="50" style="border-radius: 50%;">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<!-- Encabezado ninja animado -->
+<header style="padding: 50px 20px; background: linear-gradient(to right, #f57c00, #ffcc80); color: white; text-align: center;">
+  <h1 style="font-size: 3rem; margin-bottom: 10px;">🌀 Bienvenidos a la Aldea Ninja del Comercio</h1>
+  <p style="font-size: 1.2rem;">¡Explora, colecciona y lleva el espíritu shinobi contigo!</p>
+</header>
+
+<!-- Sección descriptiva con imágenes -->
+<section style="padding: 40px; font-family: Arial, sans-serif; background-color: #fff3e0;">
+  <h1 style="text-align: center; color: #e65100; font-size: 2.5rem;">Bienvenidos a la Tienda Ninja</h1>
+
+  <p style="max-width: 900px; margin: 20px auto; font-size: 1.2rem; line-height: 1.8; color: #333;">
+    En <strong style="color: #e65100;">Tienda Ninja</strong> encontrarás una selección épica de productos inspirados en el universo de <strong style="color: #e65100;">Naruto</strong>.
+    Desde figuras coleccionables de tus personajes favoritos, hasta accesorios únicos y decorativos para verdaderos fanáticos del anime.
+    Nuestra misión es traerte artículos de calidad con un toque shinobi que convierta cualquier espacio en parte de Konoha 🌪️.
+  </p>
+
+  <p style="max-width: 900px; margin: 20px auto; font-size: 1.1rem; color: #444;">
+    Explora el catálogo completo, descubre promociones exclusivas y llévate a casa el poder del Rasengan en forma de merchandising 🔥.
+    ¡Gracias por ser parte de esta aldea oculta en el comercio!
+  </p>
+
+  <!-- Galería horizontal -->
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
+    <img src="https://shop.viz.com/cdn/shop/products/NarutoShippudenTeam7Poster_1024x1024.jpg" alt="Poster Team 7" style="width: 250px; border-radius: 12px; object-fit: cover;">
+    <img src="https://shop.viz.com/cdn/shop/products/NarutoShippudenAkamaruPillow_1024x1024.jpg" alt="Almohada Akamaru" style="width: 250px; border-radius: 12px; object-fit: cover;">
+    <img src="https://shop.viz.com/cdn/shop/products/NarutoShippudenUzumakiClanSymbolTumbler_1024x1024.jpg" alt="Vaso Clan Uzumaki" style="width: 250px; border-radius: 12px; object-fit: cover;">
+  </div>
+</section>
+
+<!-- Cards de productos destacados -->
+<div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 40px;">
+  <div style="width: 250px; background: #fff8e1; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <img src="https://shop.viz.com/cdn/shop/products/NarutoShippudenTeam7Poster_1024x1024.jpg" style="width: 100%; border-radius: 8px;">
+    <h3 style="color: #e65100;">Poster Team 7</h3>
+    <p style="margin: 8px 0;">$12.99</p>
+    <button style="padding: 8px 16px; background-color: #e65100; color: white; border: none; border-radius: 6px;">Comprar</button>
+  </div>
+  <!-- Repite este bloque para más productos -->
 </div>
+
+<!-- Tabla dinámica de usuarios -->
+<div style="width: 90%; margin: 30px auto; font-family: Arial, sans-serif;">
+  <table style="width: 100%; border-collapse: collapse; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden;">
+    <thead>
+      <tr style="background-color: #ffe0b2; color: #e65100;">
+        <th style="padding: 12px; border: 1px solid #e0e0e0; font-size: 1.1rem;">Nombre</th>
+        <th style="padding: 12px; border: 1px solid #e0e0e0; font-size: 1.1rem;">Producto</th>
+        <th style="padding: 12px; border: 1px solid #e0e0e0; font-size: 1.1rem;">Precio</th>
+        <th style="padding: 12px; border: 1px solid #e0e0e0; font-size: 1.1rem;">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios" style="background-color: #fff8e1; transition: background 0.3s ease;" onmouseover="this.style.background='#ffe0b2'" onmouseout="this.style.background='#fff8e1'">
+        <td style="padding: 10px; border: 1px solid #e0e0e0;">{{ usuario.nombre }}</td>
+        <td style="padding: 10px; border: 1px solid #e0e0e0;">{{ usuario.profesion }}</td>
+        <td style="padding: 10px; border: 1px solid #e0e0e0;">{{ usuario.precio }}</td>
+        <td style="padding: 10px; border: 1px solid #e0e0e0;">
+          <img [src]="usuario.imagenUrl" alt="Foto" width="60" height="60" style="border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Pie de página ninja -->
+<footer style="margin-top: 60px; padding: 30px; background-color: #e65100; color: white; text-align: center;">
+  <p>© 2025 Tienda Ninja - Todos los derechos reservados</p>
+ 
+</footer>
