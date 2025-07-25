@@ -1,0 +1,22 @@
+<div style="width: 90%; margin: 30px auto;">
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background: #f3f3f3;">
+                <th style="padding: 8px; border: 1px solid #ccc;">Nombre</th>
+                <th style="padding: 8px; border: 1px solid #ccc;">Producto</th>
+                <th style="padding: 8px; border: 1px solid #ccc;">precio</th>
+                <th style="padding: 8px; border: 1px solid #ccc;">Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td style="padding: 8px; border: 1px solid #ccc;">{{ usuario.nombre }}</td>
+                <td style="padding: 8px; border: 1px solid #ccc;">{{ usuario.profesion }}</td>
+                <td style="padding: 8px; border: 1px solid #ccc;">{{ usuario.precio }}</td>
+                <td style="padding: 8px; border: 1px solid #ccc;">
+                    <img [src]="usuario.imagenUrl" alt="Foto" width="50" style="border-radius: 50%;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

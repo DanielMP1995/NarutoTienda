@@ -1,0 +1,22 @@
+<div class="text-center border rounded-lg p-4 shadow-md w-fit mx-auto">
+    <img [src]="imagenUrl" alt="foto"
+        class="mx-auto transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg rounded-full w-32 h-32 object-cover" />
+    <h2 class="text-xl font-semibold mt-4">{{ nombre }}</h2>
+
+    <table class="table-auto mx-auto mt-4 text-left">
+        <tbody>
+            <tr>
+                <th class="pr-4">Profesión:</th>
+                <td>{{ profesion }}</td>
+            </tr>
+            <tr>
+                <th class="pr-4">Email:</th>
+                <td>{{ email }}</td>
+            </tr>
+            <tr>
+                <th class="pr-4">Ciudad:</th>
+                <td>{{ ciudad }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
